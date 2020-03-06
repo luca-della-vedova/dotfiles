@@ -46,3 +46,18 @@ set gdefault
 set encoding=utf-8 nobomb
 " Highlight current line
 set cursorline
+
+" Create backup folders and put swp files there
+if !isdirectory($HOME."/.vim/backup")
+  call mkdir($HOME."/.vim/backup", "p")
+endif
+if !isdirectory($HOME."/.vim/swap")
+  call mkdir($HOME."/.vim/swap", "p")
+endif
+if !isdirectory($HOME."/.vim/undo")
+  call mkdir($HOME."/.vim/undo", "p")
+endif
+
+set backupdir=~/.vim/backup//
+set directory=~/.vim/swap//
+set undodir=~/.vim/undo//
